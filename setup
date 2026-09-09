@@ -4,8 +4,17 @@
 
 mkdir -p ~/.config
 
-ln -sf ~/dotfiles/bashrc ~/.bashrc
-ln -sf ~/dotfiles/vimrc ~/.vimrc
+link_file() {
+  ln -sf "$1" "$2"
+  echo "Linked: $2"
+}
+
+dotfiles=("bashrc" "vimrc")
+
+for file in "${dotfiles[@]}"; do
+  link_file "$HOME/dotfiles/$file" "$HOME/.$file"
+done
+
 ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
 
 echo "Dotfiles Linked!"
