@@ -16,5 +16,6 @@ for file in "${dotfiles[@]}"; do
 done
 
 ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -sf ~/dotfiles/alacritty.toml ~/.config/alacritty.toml
 
 echo "Dotfiles Linked!"
